@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 cmake_minimum_required(VERSION 3.16)
-project(yarp-device-template
+project(yarp-device-voicebox
         LANGUAGES CXX
         VERSION 3.8.0)
 
@@ -29,11 +29,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-set(YARP_FORCE_DYNAMIC_PLUGINS TRUE CACHE INTERNAL "yarp-devices-ros2 is always built with dynamic plugins")
+set(YARP_FORCE_DYNAMIC_PLUGINS TRUE CACHE INTERNAL "yarp-device-voicebox is always built with dynamic plugins")
 option(BUILD_SHARED_LIBS "Build libraries as shared as opposed to static" ON)
 
-find_package(YARP 3.10.0 COMPONENTS os sig dev rosmsg serversql OPTIONAL_COMPONENTS math REQUIRED)
-find_package(YARP 3.10.0 COMPONENTS catch2 dev_tests QUIET)
+find_package(YARP 3.12.2 COMPONENTS os sig dev REQUIRED)
+find_package(YARP 3.12.2 COMPONENTS catch2 dev_tests QUIET)
 
 if(YARP_catch2_FOUND AND YARP_dev_tests_FOUND)
   option(YARP_COMPILE_TESTS "Enable YARP tests" OFF)

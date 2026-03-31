@@ -1,0 +1,3 @@
+| | base_ip     | string |   -   | localhost | No   | The ip address of the voiceBox server           |                                                                                                                                                 |
+| | base_port   | string |   -   | 17493     | No   | The port for the voicebox address               |                                                                                                                                                 |
+| | voice       | string |   -   | -         | Yes  | The name of the voice profile                   | To check the available profiles, either check in the VoiceBox app or use the following command: curl http://server_ip_addr:server_port/profiles |
