@@ -257,9 +257,16 @@ static std::string startGeneration(
     const std::string& language,
     double speed)
 {
+    std::string profileId = profile.at("id");
+    yCDebug(VOICEBOXSYNTHESIZER) << "Starting generation with profile ID: " << profileId
+                               << " text='" << text << "'"
+                               << " language='" << language << "'"
+                               << " speed=" << speed;
+    std::string engine = profile.at("default_engine");
+    yCDebug(VOICEBOXSYNTHESIZER) << "Using engine: " << engine;
     json payload = {
-        {"profile_id", profile.at("id")},
-        {"engine", profile.at("preset_engine")},
+        {"profile_id", profileId},
+        {"engine", engine},
         {"text", text},
         {"language", language},
         {"speed", speed},
