@@ -82,7 +82,7 @@ jobs:
       if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
       run: |
         cd ${GITHUB_WORKSPACE}
-        git clone https://github.com/robotology/yarp
+        git clone https://github.com/robotology/yarp -b yarp-3.12
 
     - name: Dependencies from source [Linux&macOS]
       if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
@@ -105,7 +105,7 @@ jobs:
       shell: bash -l {0}
       run: |
         cd ${GITHUB_WORKSPACE}
-        git clone https://github.com/robotology/yarp
+        git clone https://github.com/robotology/yarp -b yarp-3.12
         cd yarp
         mkdir build
         cd build
