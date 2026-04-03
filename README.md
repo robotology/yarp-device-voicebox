@@ -16,6 +16,11 @@ Documentation of the individual devices is provided in the official Yarp documen
 
 Dependencies
 -------------
+
+### Preliminary
+- Ubuntu/Debian: sudo apt-get install libcurl4-openssl-dev nlohmann-json3-dev
+- macOS (homebrew): brew install curl nlohmann-json
+
 ### VoiceBox
 
 You need to download and install [VoiceBox](https://github.com/jamiepine/voicebox) on your pc (check the repo documentation on how to install the package)
