@@ -41,10 +41,10 @@ TEST_CASE("dev::voiceBoxSynthesizer_test", "[yarp::dev]")
         CHECK(speech->getLanguage(language));
         CHECK(language == "en");
 
-        CHECK(speech->setVoice("auto"));
+        CHECK(speech->setVoice("test_API_002"));
         std::string voice;
         CHECK(speech->getVoice(voice));
-        CHECK(voice == "auto");
+        CHECK(voice == "test_API_002");
 
         CHECK(speech->setSpeed(1.0));
         double speed;
