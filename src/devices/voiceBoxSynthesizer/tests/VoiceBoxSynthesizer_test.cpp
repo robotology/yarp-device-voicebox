@@ -25,8 +25,9 @@ TEST_CASE("dev::voiceBoxSynthesizer_test", "[yarp::dev]")
 
         Property pcfg;
         pcfg.put("device", "voiceBoxSynthesizer");
-        pcfg.put("baseUrl", "http://localhost:17493");
-        pcfg.put("profileId", "1b8f5031-c12d-453e-baf7-c0609c7590ec");
+        pcfg.put("base_ip", "localhost");
+        pcfg.put("base_port", "17493");
+        pcfg.put("voice", "test_API_001");
 
         REQUIRE(dd.open(pcfg));
 

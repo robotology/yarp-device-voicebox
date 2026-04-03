@@ -64,6 +64,8 @@ To do it follow these steps:
 **3. Select the voice, fill the little form on the right and click Create Profile**
 ![alt text](doc/images/create_voice_filled.png)
 
+**NB:** If you want, there is a bash script in src/devices/tests named `create_test_profile.sh` that will create an English based voice profile named "test_API_001" based on the preset voice "af_sarah".
+
 ### VoiceBox server
 To launch the `VoiceBox` server you have to either launch the app or to manually lanuch the server by going in the `VoiceBox` repo folder and type:
 ```bash
