@@ -511,7 +511,12 @@ yarp::dev::ReturnValue VoiceBoxSynthesizer::setLanguage(const std::string& langu
     if (language.empty()) {
         return yarp::dev::ReturnValue(yarp::dev::ReturnValue::return_code::return_value_error_method_failed);
     }
-    m_language = language;
+    std::string languageCopy = language;
+    if(language.find("-")!= std::string::npos) {
+        yCDebug(VOICEBOXSYNTHESIZER) << "Language '" << language << "' contains region code. Voicebox may not support this format. Consider using just the language code (e.g. 'en' instead of 'en-US')";
+        languageCopy = language.substr(0, language.find("-"));
+    }
+    m_language = languageCopy;
     return ReturnValue_ok;
 }
 
