@@ -55,6 +55,7 @@ public:
 private:
     std::string m_baseUrl = "http://localhost:17493";
     std::string m_language = "en";
+    std::string m_region = "US";
     profileMap m_profile;
     double m_speed = 1.0;
     double m_pitch = 1.0;
