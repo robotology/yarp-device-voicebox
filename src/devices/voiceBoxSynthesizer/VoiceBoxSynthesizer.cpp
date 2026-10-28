@@ -563,6 +563,23 @@ yarp::dev::ReturnValue VoiceBoxSynthesizer::getVoice(std::string& voice_name)
     return ReturnValue_ok;
 }
 
+yarp::dev::ReturnValue VoiceBoxSynthesizer::getAvailableVoices(yarp::sig::VectorOfString& voices)
+{
+    try {
+        profilesList profiles = getProfiles(m_baseUrl);
+        voices.clear();
+        for (const auto& profile : profiles) {
+            if (profile.find("name") != profile.end()) {
+                voices.push_back(profile.at("name"));
+            }
+        }
+        return ReturnValue_ok;
+    } catch (const std::exception& ex) {
+        yCError(VOICEBOXSYNTHESIZER) << "getAvailableVoices failed: " << ex.what();
+        return yarp::dev::ReturnValue(yarp::dev::ReturnValue::return_code::return_value_error_method_failed);
+    }
+}
+
 yarp::dev::ReturnValue VoiceBoxSynthesizer::setSpeed(const double speed)
 {
     if (speed <= 0.0) {
